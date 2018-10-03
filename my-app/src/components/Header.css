@@ -13,6 +13,14 @@
   height: 15rem;
 }
 
+@media screen and (max-width:989px){
+  .logo{
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+
 /*@media (min-width:533px) and (orientation:landscape) {
   header .logo{
     width: 20%;

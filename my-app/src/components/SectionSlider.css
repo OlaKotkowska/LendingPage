@@ -1,6 +1,6 @@
 .slider{
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   border: 1px solid white;
   background-color: black;
   display: flex;
@@ -10,6 +10,22 @@
 .sider1{
   height: 90vh;
   width: 80vw;
-  border: 20px solid white;
+  border: 1rem solid white;
   background-position: center;
+}
+@media screen and (max-width:989px){
+  .slider{
+    height: 55vh;
+    width: 100vw;
+    border: 1px solid white;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sider1{
+    width: 50vh;
+    height: 40vh;
+    border: 0.5rem solid white;
+  }
 }

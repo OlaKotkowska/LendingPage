@@ -1,4 +1,7 @@
 /*menu base styles*/
+.nav{
+  width: 100vw;
+}
 nav{
     background-color: black;
 }
@@ -25,6 +28,11 @@ nav li a{
 @media screen and (max-width:989px){
   nav li a{
     font-size: 1rem;
+  }
+}
+@media screen and (max-width:320px){
+  nav li a{
+    font-size: 0.8rem;
   }
 }
 
