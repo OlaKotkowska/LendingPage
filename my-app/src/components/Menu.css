@@ -1,0 +1,45 @@
+/*menu base styles*/
+nav{
+    background-color: black;
+}
+nav ul{
+  list-style-type:none;
+  padding: 0;
+}
+nav a{
+  text-decoration: none;
+  display:block;
+  padding:10px;
+}
+nav ul{
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+nav li a{
+  color:white;
+  font-size: 3rem;
+}
+
+@media screen and (max-width:989px){
+  nav li a{
+    font-size: 1rem;
+  }
+}
+
+
+
+/*.nav{
+
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+a{
+  color:white;
+  text-decoration: none;
+  font-size: 3rem;
+}*/

@@ -1,0 +1,21 @@
+.header{
+  width:100vw;
+  height: 20vh;
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(220, 220, 220);
+
+}
+.logo{
+  width: 15rem;
+  height: 15rem;
+}
+
+/*@media (min-width:533px) and (orientation:landscape) {
+  header .logo{
+    width: 20%;
+    height: 40%;
+  }
+}*/
