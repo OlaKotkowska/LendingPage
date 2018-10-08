@@ -1,14 +1,14 @@
 import React from "react";
 import "./SectionSlider.css";
-import slider1 from '.././images/slider1.jpg';
-import slider2 from '.././images/slider2.jpg';
-import slider3 from '.././images/slider3.jpg';
-// import imagesArr from './imagesArr.js';
-let imagesArr = [
-<img className = "slider1" src ={slider1}></img>,
-<img className = "slider2" src ={slider2}></img>,
-<img className = "slider3" src ={slider3}></img>,
-]
+// import slider1 from '.././images/slider1.jpg';
+// import slider2 from '.././images/slider2.jpg';
+// import slider3 from '.././images/slider3.jpg';
+// // import imagesArr from './imagesArr.js';
+// let imagesArr = [
+// <img className = "slider1" src ={slider1}></img>,
+// <img className = "slider2" src ={slider2}></img>,
+// <img className = "slider3" src ={slider3}></img>,
+// ]
 
 class SectionSlider extends React.Component{
   constructor(props){
@@ -18,22 +18,14 @@ class SectionSlider extends React.Component{
       }
     }
 
-    let imagesArr = [
-    <img className = "slider1" src ={slider1}></img>,
-    <img className = "slider2" src ={slider2}></img>,
-    <img className = "slider3" src ={slider3}></img>,
-    ]
-
     showNext = () =>{
+      let {slider} = this.props;
       let index = this.state.activeIndex;
-      console.log(index);
-      let slidesLength = imagesArr.lengt - 1;
-      console.log(slidesLength)
-      if (index === slidesLength) {
-        index = -1;
+      let slidesLength = slider.length - 1;
+      // console.log(slidesLength)//2
+      if (index < slidesLength) {
+          ++index;
       }
-
-      ++index;
 
       this.setState({
         activeIndex: index
@@ -58,15 +50,16 @@ class SectionSlider extends React.Component{
 // }
 
 showPrev = () => {
+  let {slider} = this.props;
   let index = this.state.activeIndex;
-  let slidesLength = imagesArr.lengt;
+  let slidesLength = slider.lengt;
     console.log(this.state.activeIndex);
   if (index > 0) {
     --index;
-  } else{
-    index = slidesLength - 1;
+  } else {
+    index = 0;
   }
-
+  console.log(this.state.activeIndex);
   this.setState({
     activeIndex: index
   });
@@ -88,20 +81,30 @@ showPrev = () => {
 //
 // }
 
+//   let classSlide = index === (this.state.activeIndex) ? 'slideActive' : 'slide';
+// return <div className = {classSlide}>{slide}</div>)}
 render(){
   return(
     <div className = "slider">
       <div><button className = "buttonLeft" onClick ={this.showPrev}>showPrev</button></div>
-      {imagesArr[this.state.index]}
+      {this.props.slider[this.state.activeIndex]}
       <div><button className = "buttonRight" onClick ={this.showNext}>showNext</button></div>
     </div>
   )
 }
 
 
+
 }
 
 export default SectionSlider;
+
+// {this.props.slider.map((slide,index) =>
+//   if (index === this.state.activeIndex){
+//     <div className = 'slideActive'>{slide}</div>
+//   } else {
+//     <div className = 'slide'>{slide}</div>
+//   })}
 /* <ul>
   <li><img className = "sider1" src ={slider1}></img></li>
 </ul> */
